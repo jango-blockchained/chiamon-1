@@ -15,4 +15,4 @@ scrape_configs:
 
   - job_name: 'chia'
     static_configs:
-      - targets: ['YOUR_HOSTNAME:9092']
+      - targets: ['HARVESTER_HOSTNAME:9092']
