@@ -1,6 +1,6 @@
-## Chia Harvester Monitor ###
+## Chia Harvester Monitoring ###
 
-Very quick and dirty Harvester monitoring (this includes the local harvester when running a full node).
+Very quick and dirty Harvester monitoring (including the local harvester when running a full node).
 
 Setup:
 
@@ -12,3 +12,5 @@ Setup:
 
 4) Start scraping the exporter metrics with Prometheus (see reference prometheus.yml config).
 5) Import the JSON dashboard into Grafana.
+
+![Dashboard screenshot](dashboard-screenshot.png?raw=true "Dashboard Screenshot")
