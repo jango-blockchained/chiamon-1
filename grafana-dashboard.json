@@ -195,7 +195,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "number_of_challenges_total{host=\"YOUR_HOSTNAME\"}",
+          "expr": "number_of_challenges_total",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
