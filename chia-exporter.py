@@ -3,6 +3,7 @@ import random
 import time
 import socket
 from prometheus_client import start_http_server, Summary, Counter, Gauge, Histogram
+from prometheus_client.utils import INF
 
 hostname = socket.gethostname()
 
@@ -12,7 +13,15 @@ hostname = socket.gethostname()
 NUMBER_OF_CHALLENGES = Counter('number_of_challenges', "Number of challenges verified", ['host'])
 ELIGIBLE_PLOTS = Counter('eligible_plots', 'Number of eligible plots for a specific challenge', ['host'])
 PROOFS_FOUND = Counter('proofs_found', 'Number of proofs found for a specific challengee', ['host'])
-DURATION = Histogram('check_duration', 'Time to check challenge', ['host'])
+DURATION = Histogram(
+    'check_duration',
+    'Time to check challenge',
+    ['host'],
+    buckets=(
+        .005, .01, .025, .05, .075, .1, .25, .5, .75, 1.0, 2.5, 5.0, 7.5, 10.0,
+        15.0, 20.0, 25.0, 28.0, 30.0, 60.0, 120.0, INF,
+    )
+)
 TOTAL_PLOTS = Gauge('total_plots', 'Total number of plots', ['host'])
 
 
